@@ -8,6 +8,7 @@ import com.example.ifoodclone.domain.model.Usuario
 import com.example.ifoodclone.domain.usecase.AutenticacaoUseCase
 import com.example.ifoodclone.domain.usecase.ResultadoAutenticacao
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,7 +30,7 @@ class AutenticacaoViewModel @Inject constructor(
     val usuarioEstaLogado: LiveData<Boolean> = _usuarioEstaLogado
 
     fun usuarioEstaLogado() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val retorno = autenticacaoUseCase.usuarioEstaLogado()
             if (retorno) {
                 _carregando.value = true
@@ -45,7 +46,7 @@ class AutenticacaoViewModel @Inject constructor(
 
         if (resultadoAutenticacao.sucessoLogin) {
             _carregando.value = true
-            viewModelScope.launch {
+            viewModelScope.launch(Dispatchers.IO) {
                 val retornoLogin = autenticacaoUseCase.logarUsuario(usuario)
                 _sucesso.postValue(retornoLogin)
                 _carregando.value = false
@@ -60,7 +61,7 @@ class AutenticacaoViewModel @Inject constructor(
 
         if (resultadoAutenticacao.sucessoCadastro) {
             _carregando.value = true
-            viewModelScope.launch {
+            viewModelScope.launch(Dispatchers.IO) {
                 val retornoCadastro = autenticacaoUseCase.cadastrarUsuario(usuario)
                 _sucesso.postValue(retornoCadastro)
                 _carregando.value = false
