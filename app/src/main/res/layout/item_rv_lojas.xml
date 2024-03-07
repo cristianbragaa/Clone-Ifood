@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clItemLojas"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageLojaPerfil"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImagemArredondada"
+        app:srcCompat="@drawable/mcdonalds" />
+
+    <TextView
+        android:id="@+id/textLojaNome"
+        style="@style/titulo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Mc Donalds - Paulista"
+        app:layout_constraintStart_toEndOf="@+id/imageLojaPerfil"
+        app:layout_constraintTop_toTopOf="@+id/imageLojaPerfil" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="4,1"
+        android:textColor="@color/amarelo"
+        android:textSize="14sp"
+        app:drawableLeftCompat="@drawable/estrela"
+        app:layout_constraintStart_toEndOf="@+id/imageLojaPerfil"
+        app:layout_constraintTop_toBottomOf="@+id/textLojaNome" />
+
+    <TextView
+        android:id="@+id/textLojaCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Lanches"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textLojaNome" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="1km"
+        app:layout_constraintStart_toEndOf="@+id/textLojaCategoria"
+        app:layout_constraintTop_toBottomOf="@+id/textLojaNome" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="40-50 min"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLojaPerfil"
+        app:layout_constraintStart_toEndOf="@+id/imageLojaPerfil"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="R$ 7,99"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLojaPerfil"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textLojaCategoria" />
+
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLojaPerfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageLojaPerfil"
+        app:srcCompat="@drawable/coracao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

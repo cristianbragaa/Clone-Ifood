@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.ifoodclone'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.ifoodclone"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //Dependências Firebase
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
+    //Injeção Dependência(Hilt)
+    def hilt_version = "2.44"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //Dependências Lifecycle
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    //Room
+    def room_version = "2.4.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //Jetpack Navigation
+    def nav_version = "2.7.7"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Lifecycle KTX
+    implementation "androidx.fragment:fragment-ktx:1.5.5"
+
+    //Picasso(imagens)
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    //ImageSlideShow(Slider)
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
+
+    //Máscara de campos
+    implementation 'io.github.vicmikhailau:MaskedEditText:4.0.7'
+
+    //Validação de campos
+    def easyvalidation_version = "1.0.4"
+    implementation "com.wajahatkarim:easyvalidation-core:$easyvalidation_version"
+
+    /*
+     Dependências para Teste
+    */
+
+    //Dependências biblioteca Truth
+    testImplementation "com.google.truth:truth:1.1.3"
+    androidTestImplementation "com.google.truth:truth:1.1.3"
+
+    //Dependências pacote jetbrains para corrotinas
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.0-Beta'
+    androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.0-Beta'
+
+    //Dependência da Biblioteca Mockito
+    testImplementation "org.mockito:mockito-core:5.+"
+
+    //Dependências Android Arch Core para Criar executor síncrono
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
+
+    //Dependências para testes Room
+    testImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+
+    //Recursos para trabalhar com RecyclerView
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+kapt {
+    correctErrorTypes true
+}

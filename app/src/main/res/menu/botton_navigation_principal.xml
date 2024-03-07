@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/casa"
+        android:title="@string/item_menu_navegacao_inferior_home" />
+    <item
+        android:id="@+id/buscaFragment"
+        android:icon="@drawable/pesquisar"
+        android:title="@string/item_menu_navegacao_inferior_busca" />
+    <item
+        android:id="@+id/pedidosFragment"
+        android:icon="@drawable/pedidos"
+        android:title="@string/item_menu_navegacao_inferior_pedidos" />
+    <item
+        android:id="@+id/perfilFragment"
+        android:icon="@drawable/perfil"
+        android:title="@string/item_menu_navegacao_inferior_perfil" />
+</menu>
