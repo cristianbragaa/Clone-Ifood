@@ -80,15 +80,20 @@ class LojaFragment : Fragment() {
     ): View? {
         binding = FragmentLojaBinding.inflate(inflater, container , false)
 
+        inicializarToolbar()
         inicializarRvProdutosDestaque()
         inicializarRvProdutos()
 
         return binding.root
     }
 
+    private fun inicializarToolbar() {
+        //binding.toolbar.title = "Loja"
+    }
+
     private fun inicializarRvProdutosDestaque() {
         produtosDestaqueAdapter = ProdutosAdapter(TipoLayout.HORIZONTAL) {
-            findNavController().navigate(R.id.lojaFragment)
+            findNavController().navigate(R.id.produtoFragment)
         }
         produtosDestaqueAdapter.adicionarListaProdutos(listaProdutos)
 
@@ -100,7 +105,7 @@ class LojaFragment : Fragment() {
 
     private fun inicializarRvProdutos() {
         produtosAdapter = ProdutosAdapter(TipoLayout.VERTICAL) {
-            findNavController().navigate(R.id.lojaFragment)
+            findNavController().navigate(R.id.produtoFragment)
         }
         produtosAdapter.adicionarListaProdutos(listaProdutos)
 

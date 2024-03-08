@@ -32,5 +32,14 @@
         android:id="@+id/lojaFragment"
         android:name="com.example.ifoodclone.presentation.ui.fragments.LojaFragment"
         android:label="fragment_loja"
-        tools:layout="@layout/fragment_loja" />
+        tools:layout="@layout/fragment_loja" >
+        <action
+            android:id="@+id/action_lojaFragment_to_produtoFragment2"
+            app:destination="@id/produtoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/produtoFragment"
+        android:name="com.example.ifoodclone.presentation.ui.fragments.ProdutoFragment"
+        android:label="fragment_produto"
+        tools:layout="@layout/fragment_produto" />
 </navigation>
