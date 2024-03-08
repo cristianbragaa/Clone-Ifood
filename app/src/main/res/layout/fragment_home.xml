@@ -125,10 +125,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ordenação"
-                    app:chipEndPadding="@dimen/espacamento_pequeno"
                     app:chipIcon="@drawable/setaabaixopreta"
-                    app:chipIconSize="18dp"
-                    app:chipStartPadding="@dimen/espacamento_pequeno" />
+                    app:chipIconSize="18dp" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipRetirar"
@@ -136,19 +134,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pra retirar"
-                    app:chipEndPadding="@dimen/espacamento_pequeno"
                     app:chipIcon="@drawable/walk"
-                    app:chipIconSize="18dp"
-                    app:chipStartPadding="@dimen/espacamento_pequeno" />
+                    app:chipIconSize="18dp" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipEntregaGratis"
                     style="@style/Widget.MaterialComponents.Chip.SelecaoIfood"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Entrega grátis"
-                    app:chipEndPadding="@dimen/espacamento_pequeno"
-                    app:chipStartPadding="@dimen/espacamento_pequeno" />
+                    android:text="Entrega grátis" />
             </com.google.android.material.chip.ChipGroup>
 
             <TextView

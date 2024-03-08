@@ -193,7 +193,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun inicializarRvUltimasLojas() {
-        ultimasLojasAdapter = LojasAdapter(TipoLayout.ULTIMAS_LOJAS) {
+        ultimasLojasAdapter = LojasAdapter(TipoLayout.HORIZONTAL) {
             findNavController().navigate(R.id.lojaFragment)
         }
         ultimasLojasAdapter.adicionarLista(listaLojas)
@@ -205,7 +205,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun inicializarRvLojas() {
-        lojasAdapter = LojasAdapter(TipoLayout.LOJAS) {
+        lojasAdapter = LojasAdapter(TipoLayout.VERTICAL) {
             findNavController().navigate(R.id.lojaFragment)
         }
         lojasAdapter.adicionarLista(listaLojas)

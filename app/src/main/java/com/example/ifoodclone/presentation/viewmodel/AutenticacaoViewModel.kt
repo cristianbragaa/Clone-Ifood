@@ -33,10 +33,10 @@ class AutenticacaoViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val retorno = autenticacaoUseCase.usuarioEstaLogado()
             if (retorno) {
-                _carregando.value = true
+                _carregando.postValue(true)
             }
             _usuarioEstaLogado.postValue(retorno)
-            _carregando.value = false
+            _carregando.postValue(false)
         }
     }
 
@@ -45,11 +45,11 @@ class AutenticacaoViewModel @Inject constructor(
         _resultadoValidacao.value = resultadoAutenticacao
 
         if (resultadoAutenticacao.sucessoLogin) {
-            _carregando.value = true
+            _carregando.postValue(true)
             viewModelScope.launch(Dispatchers.IO) {
                 val retornoLogin = autenticacaoUseCase.logarUsuario(usuario)
                 _sucesso.postValue(retornoLogin)
-                _carregando.value = false
+                _carregando.postValue(false)
 
             }
         }
@@ -60,11 +60,11 @@ class AutenticacaoViewModel @Inject constructor(
         _resultadoValidacao.value = resultadoAutenticacao
 
         if (resultadoAutenticacao.sucessoCadastro) {
-            _carregando.value = true
+            _carregando.postValue(true)
             viewModelScope.launch(Dispatchers.IO) {
                 val retornoCadastro = autenticacaoUseCase.cadastrarUsuario(usuario)
                 _sucesso.postValue(retornoCadastro)
-                _carregando.value = false
+                _carregando.postValue(false)
 
             }
         }

@@ -11,7 +11,8 @@
     </style>
 
     <style name="ImagemCantosArredondados" >
-        <item name="cornerSize">15%</item>
+        <item name="cornerSize">10%</item>
+        <item name="backgroundColor">@color/cinza</item>
     </style>
 
     <style name="titulo1" >

@@ -18,8 +18,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="691dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:paddingLeft="@dimen/espacamento_padrao"
         android:paddingTop="@dimen/espacamento_padrao"
@@ -34,6 +34,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espacamento_padrao"
+            android:layout_marginBottom="@dimen/espacamento_padrao"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -56,6 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Lanches - 1km - $$$$" />
+
             </LinearLayout>
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -64,9 +67,35 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/ImagemArredondada"
-                tools:src="@drawable/mcdonalds" />
+                android:src="@drawable/mcdonalds"
+                app:shapeAppearanceOverlay="@style/ImagemArredondada" />
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Destaques"
+            android:textSize="@dimen/tamanho_texto_titulo1"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProdutosDestaque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="4"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_rv_produto_destaque"
+            tools:orientation="horizontal"
+            tools:spanCount="5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProdutos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_rv_produto" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
