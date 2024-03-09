@@ -8,7 +8,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="192dp">
+        android:layout_height="215dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -104,6 +104,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/espacamento_padrao"
+            android:layout_marginRight="@dimen/espacamento_padrao"
             android:orientation="vertical"
             tools:layout_editor_absoluteY="130dp">
 

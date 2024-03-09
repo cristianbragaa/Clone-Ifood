@@ -120,8 +120,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun inicializarFiltrosLojas() {
-        val filtroRetirar = binding.chipRetirar.isChecked
-        val filtroEntregaGratis = binding.chipEntregaGratis.isChecked
+        /*val filtroRetirar = binding.chipRetirar.isChecked
+        val filtroEntregaGratis = binding.chipEntregaGratis.isChecked*/
 
         binding.chipOrdenacao.setOnClickListener {
             val listaOrdenacao = arrayOf("Ordenação Padrão","Crescente", "Decrescente")

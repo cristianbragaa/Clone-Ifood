@@ -15,7 +15,7 @@
 
     <!-- Cores solidas -->
     <color name="branco">#FFFFFFFF</color>
-    <color name="cinza">#BCBBBB</color>
+    <color name="cinza">#D6D6D6</color>
     <color name="preto">#272727</color>
     <color name="amarelo">#FFC845</color>
     <color name="secundaria_clara">#FFAEB2</color>

@@ -71,7 +71,6 @@ class LojaFragment : Fragment() {
             "",
             "https://static.ifood-static.com.br/image/upload/t_medium/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202210180607_gwjieubx17e.jpg"
         ),
-
     )
 
     override fun onCreateView(
