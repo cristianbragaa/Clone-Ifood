@@ -2,8 +2,13 @@ package com.example.ifoodclone.presentation.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +18,7 @@ import com.example.ifoodclone.helper.TipoLayout
 import com.example.ifoodclone.R
 import com.example.ifoodclone.databinding.FragmentLojaBinding
 import com.example.ifoodclone.presentation.ui.adapters.ProdutosAdapter
+import kotlin.math.abs
 
 class LojaFragment : Fragment() {
 
@@ -77,7 +83,7 @@ class LojaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLojaBinding.inflate(inflater, container , false)
+        binding = FragmentLojaBinding.inflate(inflater, container, false)
 
         inicializarToolbar()
         inicializarRvProdutosDestaque()
@@ -87,7 +93,38 @@ class LojaFragment : Fragment() {
     }
 
     private fun inicializarToolbar() {
-        //binding.toolbar.title = "Loja"
+        with(binding) {
+            btnNavLojaVoltar.setOnClickListener {
+                findNavController().navigate(R.id.homeFragment)
+            }
+
+            val compatActivity = (activity as AppCompatActivity)
+            compatActivity.setSupportActionBar(collapsedToolbar)
+
+            compatActivity.addMenuProvider(object : MenuProvider {
+                override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                    menuInflater.inflate(R.menu.loja_pesquisa, menu)
+                }
+
+                override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                    return true
+                }
+            }, viewLifecycleOwner)
+
+
+            /* appbar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+                 val navVertical = abs(verticalOffset)
+                 if (navVertical >= appBarLayout.totalScrollRange) {
+                     textNavLojaTitulo.text = "TotalScroll"
+                 } else if (navVertical == 0) {
+                     textNavLojaTitulo.text = "Zero"
+                 }
+             }*/
+        }
+
+        //navController.currentDestination?.label = ""
+        //toolbar.setupWithNavController(navController)
+        //NavigationUI.setupWithNavController(toolbar, navController)
     }
 
     private fun inicializarRvProdutosDestaque() {

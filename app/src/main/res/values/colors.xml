@@ -20,4 +20,7 @@
     <color name="amarelo">#FFC845</color>
     <color name="secundaria_clara">#FFAEB2</color>
 
+    <!-- Cores transparentes -->
+    <color name="preto_transparent">#94000000</color>
+
 </resources>

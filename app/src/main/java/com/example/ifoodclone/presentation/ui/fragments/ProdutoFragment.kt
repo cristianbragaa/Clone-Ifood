@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ifoodclone.R
 import com.example.ifoodclone.databinding.FragmentProdutoBinding
 import com.example.ifoodclone.domain.model.Adicional
 import com.example.ifoodclone.domain.model.Produto
@@ -69,9 +71,19 @@ class ProdutoFragment : Fragment() {
     ): View? {
         binding = FragmentProdutoBinding.inflate(inflater, container, false)
 
+        inicializarToolbar()
         inicializarRvAdicionais()
 
         return binding.root
+    }
+
+    private fun inicializarToolbar() {
+
+        with(binding) {
+            btnNavProdutoVoltar.setOnClickListener {
+                findNavController().navigate(R.id.lojaFragment)
+            }
+        }
     }
 
     private fun inicializarRvAdicionais() {
